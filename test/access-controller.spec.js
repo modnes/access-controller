@@ -21,7 +21,7 @@ describe('Access Controller', () => {
     }
     const CONSTRAINTS = {
       functions: [
-        user => user.id === 2,
+        user => user.id === 1,
         USER.isLogged
       ]
     }
@@ -49,8 +49,8 @@ describe('Access Controller', () => {
     const CONSTRAINTS = {
       roles: ['user', 'manager'],
       functions: [
-        USER.isLogged,
-        user => user.id === 2
+        user => user.id === 2,
+        USER.isLogged
       ]
     }
 

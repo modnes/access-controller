@@ -25,12 +25,10 @@ export default class AccessController {
   }
 
   static callFunctions (user, functions) {
-    let access = false
+    for (const functionToCall of functions) {
+      if (!functionToCall(user)) return false
+    }
 
-    functions.forEach(functionToCall => {
-      access = functionToCall(user)
-    })
-
-    return access
+    return true
   }
 }
